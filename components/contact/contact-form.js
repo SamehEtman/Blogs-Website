@@ -30,6 +30,7 @@ const ContactForm = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [notificationStatus]);
+  
   const onFormSubmit = async (e) => {
     e.preventDefault();
     const contactDetails = {
