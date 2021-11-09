@@ -41,7 +41,6 @@ const ContactForm = () => {
       setNotificationStatus('pending');
       setNotificationMessage('Sending Email .... ');
       const data = await sendContactForm(contactDetails);
-      console.log(data)
       setNotificationStatus('success');
       setNotificationMessage(data.message || 'Email sent!');
       setEnteredEmail('');
