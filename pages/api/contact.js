@@ -1,5 +1,5 @@
 import { isEmail } from 'validator';
-import { connectDB, insertEmail } from '../../lib/dp.util';
+import { connectDB, insertEmail } from '../../lib/dp-util';
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     const { email, name, message } = req.body;
