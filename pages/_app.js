@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
           <title>Sameh Blogs</title>
           <meta name="description" content="NextJS Blogs" />
+          <meta name="robots" content="all" />
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
