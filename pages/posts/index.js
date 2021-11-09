@@ -1,33 +1,21 @@
 import AllPosts from '../../components/posts/all-posts';
-const DUMMYDATA = [
-  {
-    title: 'Sameh',
-    image: 'p.jpg',
-    excerpt: 'i love sameh',
-    date: '1998-10-11',
-    slug: 'sameh-is-gamed',
-  },
-  {
-    title: 'Sameh',
-    image: 'p.jpg',
-    excerpt: 'i love sameh',
-    date: '1998-10-11',
-    slug: 'sameh-is-gamed',
-  },
-  {
-    title: 'Sameh',
-    image: 'p.jpg',
-    excerpt: 'i love sameh',
-    date: '1998-10-11',
-    slug: 'sameh-is-gamed',
-  },
-];
-const AllPostsPage = () => {
+import { getAllPosts } from '../../lib/posts-util';
+
+const AllPostsPage = (props) => {
   return (
     <section>
-      <AllPosts posts = {DUMMYDATA}/>
+      <AllPosts posts={props.posts} />
     </section>
   );
 };
+export function getStaticProps() {
+  const AllPosts = getAllPosts();
+  return {
+    props: {
+      posts: AllPosts,
+    },
+    revalidate: 1800,
+  };
+}
 
 export default AllPostsPage;

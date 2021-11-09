@@ -7,7 +7,7 @@ const PostsGrid = (props) => {
       return <PostItem key={post.slug} post={post} />;
     });
   };
-
+  if (!posts) return <p>Loading ... </p>
   return <ul className={classes.grid}>{renderPosts()}</ul>;
 };
 export default PostsGrid;
